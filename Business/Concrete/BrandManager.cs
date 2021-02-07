@@ -21,6 +21,7 @@ namespace Business.Concrete
             if (brand.BrandName.Length > 2)
             {
                 _brandDal.Add(brand);
+                Console.WriteLine("Marka başarıyla eklendi.");
             }
         }
 
@@ -42,7 +43,11 @@ namespace Business.Concrete
 
         public void Update(Brand brand)
         {
-            _brandDal.Update(brand);
+            if (brand.BrandName.Length > 2)
+            {
+                _brandDal.Update(brand);
+                Console.WriteLine("Marka başarıyla Güncellendi.");
+            }
         }
     }
 }

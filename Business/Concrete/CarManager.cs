@@ -25,7 +25,7 @@ namespace Business.Concrete
             }
             else
             {
-                Console.WriteLine("If it is less than 2 letters, the description and the daily price cannot be added if it is less than 0.");
+                Console.WriteLine("Please enter the description more than 2 letters...");
             }
         }
 
