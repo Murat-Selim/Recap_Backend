@@ -21,7 +21,8 @@ namespace Business.Concrete
         {
             if (color.ColorName.Length > 2)
             {
-                _colorDal.Add(color); 
+                _colorDal.Add(color);
+                Console.WriteLine("Renk basariyla eklendi");
             }
         }
 

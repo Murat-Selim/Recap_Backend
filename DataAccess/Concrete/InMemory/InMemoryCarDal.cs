@@ -1,5 +1,6 @@
 ﻿using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,11 +9,37 @@ using System.Text;
 
 namespace DataAccess.Concrete
 {
-    public class InMemoryCarDal: ICarDal
-    {
-        List<Car> _cars;
+    public class InMemoryCarDal
+      { 
+        /*List<Car> _cars;
+{
+        public void Delete(Car entity)
+        {
+            throw new NotImplementedException();
+        }
 
-        public InMemoryCarDal()
+        public Car Get(Expression<Func<Car, bool>> filter)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Car> GetAll(Expression<Func<Car, bool>> filter = null)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<CarDetailDto> GetCarDetails()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(Car entity)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public InMemoryCarDal()
         {
             _cars = new List<Car>
             {
@@ -55,7 +82,12 @@ namespace DataAccess.Concrete
         {
             return _cars.Where(c => c.CarId == id).ToList();
         }
-        
+
+        public List<CarDetailDto> GetCarDetails()
+        {
+            
+        }
+
         public void Update(Car car)
         {
             Car carToUpdate = _cars.SingleOrDefault(c => c.CarId == car.CarId);
@@ -63,7 +95,7 @@ namespace DataAccess.Concrete
             carToUpdate.ModelYear = car.ModelYear;
             carToUpdate.DailyPrice = car.DailyPrice;
             carToUpdate.Descriptions = car.Descriptions;
-        }
+        }*/
     
     }
 }
