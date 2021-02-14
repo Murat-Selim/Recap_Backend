@@ -24,10 +24,15 @@ namespace ConsoleUI
             BrandManager brandManager = new BrandManager(new EfBrandDal());
             ColorManager colorManager = new ColorManager(new EfColorDal());
 
-            foreach (var car in carManager.GetAll())
+            var result = carManager.GetAll();
+            if (result.Success == true)
             {
-                Console.WriteLine("{0} / {1} / {2}", brandManager.GetByBrandId(car.BrandId).BrandName, colorManager.GetByColorId(car.ColorId).ColorName, car.DailyPrice);
+                foreach (var car in result.Data)
+                {
+                    Console.WriteLine("{0} / {1} / {2}", brandManager.GetByBrandId(car.BrandId), colorManager.GetByColorId(car.ColorId), car.DailyPrice);
+                }
             }
+            
 
             carManager.Add(new Car { CarId = 6, BrandId = 6, ColorId = 6, DailyPrice = 0, ModelYear = "2020", Descriptions = "Tesla" });
             carManager.Add(new Car { CarId = 7, BrandId = 7, ColorId = 7, DailyPrice = 10000, ModelYear = "2019", Descriptions = "Fiat" });
@@ -37,10 +42,15 @@ namespace ConsoleUI
         {
             BrandManager brandManager = new BrandManager(new EfBrandDal());
 
-            foreach (var brand in brandManager.GetAll())
+            var result = brandManager.GetAll();
+            if (result.Success == true)
             {
-                Console.WriteLine("{0} / {1}", brand.BrandId, brand.BrandName);
+                foreach (var brand in result.Data)
+                {
+                    Console.WriteLine("{0} / {1}", brand.BrandId, brand.BrandName);
+                }
             }
+            
 
             brandManager.Add(new Brand { BrandName = "Tesla" });
             
@@ -49,9 +59,13 @@ namespace ConsoleUI
         {
             ColorManager colorManager = new ColorManager(new EfColorDal());
 
-            foreach (var color in colorManager.GetAll())
+            var result = colorManager.GetAll();
+            if (result.Success == true)
             {
-                Console.WriteLine("{0} / {1}", color.ColorId, color.ColorName);
+                foreach (var brand in result.Data)
+                {
+                    Console.WriteLine("{0} / {1}", brand.ColorId, brand.ColorName);
+                }
             }
 
             colorManager.Add(new Color { ColorName = "gri"});
@@ -62,9 +76,13 @@ namespace ConsoleUI
         {
             CarManager carManager = new CarManager(new EfCarDal());
 
-            foreach (var car in carManager.GetCarDetails())
+            var result = carManager.GetCarDetails();
+            if (result.Success == true)
             {
-                Console.WriteLine("{0} / {1} / {2} / {3}", car.CarId, car.BrandName, car.ColorName, car.ModelYear);
+                foreach (var car in result.Data)
+                {
+                    Console.WriteLine("{0} / {1} / {2} / {3}", car.CarId, car.BrandName, car.ColorName, car.ModelYear);
+                }
             }
 
         }
