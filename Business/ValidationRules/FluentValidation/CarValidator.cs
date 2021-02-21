@@ -14,14 +14,14 @@ namespace Business.ValidationRules.FluentValidation
             RuleFor(c => c.CarName).NotEmpty();
             RuleFor(c => c.DailyPrice).NotEmpty();
             RuleFor(c => c.DailyPrice).GreaterThan(0);
-            RuleFor(c => c.DailyPrice).GreaterThanOrEqualTo(10).When(c => c.CarId == 1);
-            RuleFor(c => c.CarName).Must(StartWithA).WithMessage("Urunler A harfi ile baslamali");
+            //RuleFor(c => c.DailyPrice).GreaterThanOrEqualTo(10).When(c => c.CarId == 1);
+            ///RuleFor(c => c.CarName).Must(StartWithA).WithMessage("Urunler A harfi ile baslamali");
         
         }
 
-        private bool StartWithA(string arg)
-        {
-            return arg.StartsWith("A");
-        }
+        //private bool StartWithA(string arg)
+        //{
+        //    return arg.StartsWith("A");
+        //}
     }
 }
