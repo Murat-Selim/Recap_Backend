@@ -73,7 +73,7 @@ namespace Business.Concrete
 
         public IResult Update(Car car)
         {
-            if (car.CarName.Length < 2 && car.DailyPrice == 0)
+            if (car.CarName.Length <= 2 && car.DailyPrice == 0)
             {
                 return new ErrorResult(Messages.CarNameInvalid);
 

@@ -12,7 +12,7 @@ using System.Text;
 
 namespace Business.DependencyResolvers.Autofac
 {
-    public class AutofacBusinessModule : Module
+    public class AutofacBusinessModule : Module //WebAPI deki, StartUp da yazdığımız ortamı burada Autofac uzerinde kuruyoruz.
     {
         protected override void Load(ContainerBuilder builder)
         {

@@ -12,9 +12,9 @@ namespace Core.Aspects.Autofac.Validation
     public class ValidationAspect: MethodInterception
     {
         private Type _validatorType;
-        public ValidationAspect(Type validatorType)
+        public ValidationAspect(Type validatorType)  //Attribute lara tipleri böyle atıyoruz.
         {
-            if (!typeof(IValidator).IsAssignableFrom(validatorType))
+            if (!typeof(IValidator).IsAssignableFrom(validatorType))  //Eğer kullanıcının verdiği validatorType bir IValidator degilse ona bu uyarıyı ver.
             {
                 throw new System.Exception("Bu bir dogrulama sinifi degil");
             }
